@@ -1,0 +1,98 @@
+/* Blue Theme Variables */
+:root {
+    --primary-blue: #2563eb;
+    --dark-blue: #1e40af;
+    --light-blue: #93c5fd;
+    --bg-white: #ffffff;
+    --text-gray: #4b5563;
+  }
+  
+  /* Navbar Base Styling */
+  topnav-blue-theme {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; 
+    width: 100%;
+    
+  }
+  
+  /* Logo/Brand */
+  .logo-icon {
+    background: var(--primary-blue);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-right: 0.75rem;
+  }
+  
+  .brand-name {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+  
+  /* Navigation Links */
+  .nav-link-custom {
+    color: var(--text-gray) !important;
+    margin: 0 0.5rem;
+    font-weight: 500;
+  }
+  
+  .nav-link-custom:hover {
+    color: var(--primary-blue) !important;
+  }
+  .nav-link-custom:active{
+    color: var(--dark-blue) !important;
+  }
+  
+  /* Search Bar */
+  /*.search-bar {
+    width: 50%;
+    margin: 0 1.5rem;
+  }*/
+  
+  .search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-gray);
+  }
+  
+  .search-input {
+    padding-left: 2.5rem !important;
+    border-radius: 20px !important;
+    border: 1px solid #e5e7eb;
+    
+  }
+  
+  .search-input:focus {
+    border-color: var(--light-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+  
+  /* Right-Aligned Icons */
+  .icon-link {
+    color: var(--text-gray) !important;
+    margin: 0 0.5rem;
+  }
+  
+  .nav-icon {
+    font-size: 1.25rem;
+    vertical-align: middle;
+  }
+  
+  .profile-dropdown .dropdown-toggle::after {
+    display: none; /* Hide default dropdown arrow */
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 992px) {
+    .search-bar {
+      width: 100%;
+      margin: 1rem 0;
+    }
+  }

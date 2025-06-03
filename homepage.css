@@ -1,0 +1,122 @@
+/* Base Styles */
+.homepage-container {
+    padding-top: 10px;
+    margin-top: 10px;
+    background-color: #f8f9fa;
+    /*background-image: url("../assets/image.png");*/
+    min-height: 100vh;
+    
+  }
+  
+  .homepage-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  /* Section Styling */
+  section {
+    margin-bottom: 3rem;
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+  }
+
+  
+  h1, h2, h3 {
+    color: #2563eb; /* Primary blue */
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+  }
+  
+  /* Recent Activity */
+  .activity-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .action {
+    color: #2563eb;
+    font-weight: 500;
+  }
+  
+  .file-name {
+    flex-grow: 1;
+    color: #1f2937;
+  }
+  
+  .time {
+    color: #6b7280;
+  }
+  
+  /* Category Grid */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .category-card {
+    text-align: center;
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-5px);
+    border-color: #2563eb;
+  }
+  
+  .category-icon {
+    font-size: 2rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+  }
+  
+  /* About Grid */
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .about-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  /* Icons */
+  svg {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+
+  /* Ensure the navbar is fixed at the top 
+.top-navigation-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays above other content 
+    background-color: white; /* Adjust as needed 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional for better visibility 
+  }*/
+  
+  
+  
