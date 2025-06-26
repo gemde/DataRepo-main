@@ -1,0 +1,348 @@
+/* --- GLOBAL STYLES (from your first submission) --- */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+/* Removed display: flex, place-items: center, min-width, min-height from body */
+/* These were making the entire app content centered and inflexible. */
+/* We'll manage layout with specific containers in components. */
+body {
+  margin: 0;
+  display: block; /* Override previous flex behavior */
+  min-height: auto; /* Remove min-height */
+  min-width: auto; /* Remove min-width */
+}
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* --- #root, Logo, Card Styles (from your second submission) --- */
+#root {
+  max-width: 100%; /* Keep max-width */
+  margin: 0 auto; /* Keep margin auto for centering root element */
+  padding: 2rem; /* Keep padding */
+  text-align: center; /* WARNING: This centers all content within #root. Manage with text-align: left on inner containers as needed. */
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* --- NEW GLOBAL STYLES FOR PROFILE AND GENERAL USE (from my previous suggestion) --- */
+
+.container {
+  max-width: 960px; /* Standard width for content */
+  margin: 20px auto; /* Center with top/bottom margin */
+  padding: 20px;
+  background-color: var(--background-color-card, #2e2e2e); /* A slightly lighter background for cards/sections */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* Added to counteract #root's text-align: center */
+  text-align: left;
+}
+
+@media (prefers-color-scheme: light) {
+  .container {
+    background-color: var(--background-color-card-light, #f5f5f5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--color, rgba(255, 255, 255, 0.87));
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background-color: #333;
+  color: var(--color, rgba(255, 255, 255, 0.87));
+  font-size: 1em;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-control:focus {
+  border-color: #646cff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.25);
+}
+
+.form-control::placeholder {
+  color: #aaa;
+}
+
+@media (prefers-color-scheme: light) {
+  .form-group label {
+    color: var(--color-light, #213547);
+  }
+  .form-control {
+    border-color: #ccc;
+    background-color: #fff;
+    color: #213547;
+  }
+  .form-control:focus {
+    border-color: #747bff;
+    box-shadow: 0 0 0 3px rgba(116, 123, 255, 0.25);
+  }
+  .form-control::placeholder {
+    color: #888;
+  }
+}
+
+.btn-primary {
+  background-color: #646cff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #535bf2;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Profile specific styles */
+.profile-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-picture-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #646cff; /* Accent border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-picture-container:hover {
+  border-color: #535bf2;
+  box-shadow: 0 0 15px rgba(100, 108, 255, 0.5);
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-picture-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.profile-picture-container:hover .profile-picture-overlay {
+  opacity: 1;
+}
+
+.profile-picture-overlay span {
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.profile-sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .profile-sections {
+    grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+  }
+}
+
+.profile-section-card {
+  background-color: var(--background-color-card, #2e2e2e);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-color-scheme: light) {
+  .profile-section-card {
+    background-color: var(--background-color-card-light, #f0f0f0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.profile-section-card h2 {
+  margin-top: 0;
+  color: var(--color, rgba(255, 255, 255, 0.87));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  .profile-section-card h2 {
+    color: var(--color-light, #213547);
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #646cff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

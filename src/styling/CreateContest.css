@@ -1,0 +1,191 @@
+/* src/styling/CreateContest.css */
+
+.create-contest-container {
+    padding: 40px 20px;
+    background-color: #f0f2f5;
+    min-height: calc(100vh - 60px); /* Adjust for nav height */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for longer forms */
+}
+
+.create-contest-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+}
+
+.create-contest-card h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.create-contest-form .form-group {
+    margin-bottom: 25px;
+}
+
+.create-contest-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34495e;
+    font-weight: 600;
+    font-size: 1.05em;
+}
+
+.create-contest-form input[type="text"],
+.create-contest-form input[type="number"],
+.create-contest-form input[type="datetime-local"],
+.create-contest-form textarea,
+.create-contest-form select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #555;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.create-contest-form input:focus,
+.create-contest-form textarea:focus,
+.create-contest-form select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+.create-contest-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.create-contest-form select {
+    appearance: none; /* Remove default arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13%205.1L146.2%20224.2%2018.8%2074.5a17.6%2017.6%200%200%200-25.3%2023.9l130.4%20120.4c6.8%206.6%2018.3%206.6%2025.1%200l130.4-120.4c6.8-6.9%206.8-18.3-.1-25.2z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 0.8em;
+    padding-right: 30px; /* Make space for the custom arrow */
+}
+
+.selected-tags {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background-color: #e8f6ff;
+    color: #2980b9;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.tag button {
+    background: none;
+    border: none;
+    color: #2980b9;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 3px;
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+.custom-category-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.custom-category-input input {
+    flex-grow: 1;
+    border-radius: 8px;
+}
+
+.custom-category-input button {
+    padding: 10px 15px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.custom-category-input button:hover {
+    background-color: #27ae60;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #bdc3c7;
+    color: #34495e;
+}
+
+.btn-secondary:hover {
+    background-color: #95a5a6;
+    transform: translateY(-2px);
+}
+
+.success-message {
+    color: #27ae60;
+    background-color: #e6ffee;
+    border: 1px solid #27ae60;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.error-message {
+    color: #e74c3c;
+    background-color: #ffe6e6;
+    border: 1px solid #e74c3c;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}

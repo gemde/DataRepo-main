@@ -1,0 +1,211 @@
+/* src/styling/enterContest.css */
+
+.enter-contest-container {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    min-height: calc(100vh - 100px); /* Adjust based on header/footer height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.enter-contest-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: 100%;
+}
+
+.enter-contest-card h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.enter-contest-card .contest-description {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #34495e;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.entry-instructions, .submission-form {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+}
+
+.entry-instructions h2, .submission-form h3 {
+    font-size: 1.6em;
+    color: #3498db;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.entry-instructions ul {
+    list-style: disc;
+    margin-left: 25px;
+    padding: 0;
+    color: #555;
+}
+
+.entry-instructions ul li {
+    margin-bottom: 10px;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.submission-form p {
+    font-size: 1.1em;
+    color: #7f8c8d;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.enter-contest-actions {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.enter-contest-actions .btn-primary,
+.enter-contest-actions .btn-secondary {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.enter-contest-actions .btn-primary {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.enter-contest-actions .btn-primary:hover:not(:disabled) {
+    background-color: #2980b9;
+}
+
+.enter-contest-actions .btn-primary:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.enter-contest-actions .btn-secondary {
+    background-color: #ecf0f1;
+    color: #34495e;
+    border: 1px solid #bdc3c7;
+}
+
+.enter-contest-actions .btn-secondary:hover {
+    background-color: #bdc3c7;
+}
+
+.loading-message, .error-message, .no-contest-found, .status-message {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2em;
+    color: #7f8c8d;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.status-message h2 {
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+.status-message p {
+    margin-bottom: 25px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .enter-contest-container {
+        padding: 20px 15px;
+        margin: 15px auto;
+    }
+
+    .enter-contest-card h1 {
+        font-size: 1.8em;
+    }
+
+    .enter-contest-actions .btn-primary,
+    .enter-contest-actions .btn-secondary {
+        display: block;
+        width: calc(100% - 20px);
+        margin: 10px auto;
+    }
+}
+/* src/styling/enterContestPage.css (add these new styles) */
+
+.file-input {
+    display: none; /* Hide the default file input */
+}
+
+.custom-file-upload {
+    border: 2px dashed #3498db;
+    border-radius: 8px;
+    padding: 15px 20px;
+    cursor: pointer;
+    background-color: #ecf0f1;
+    color: #34495e;
+    font-size: 1em;
+    text-align: center;
+    display: block; /* Takes full width */
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: #dfe6e9;
+    border-color: #2980b9;
+}
+
+.submission-form .btn-primary {
+    width: 100%; /* Make submit button full width */
+    padding: 12px 0;
+    margin-bottom: 15px; /* Space below button */
+}
+
+.success-message {
+    color: #27ae60;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Ensure the back button is centered below */
+.enter-contest-actions {
+    margin-top: 30px;
+    text-align: center;
+}
+.enter-contest-actions .btn-secondary {
+    display: inline-block; /* Keep it inline-block for centering */
+}
+
+/* Existing styles are fine, just adding these new ones. */

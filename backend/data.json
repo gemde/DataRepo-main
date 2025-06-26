@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1715670000001,
+      "name": "Climate Data 2023",
+      "filename": "1715670000001-ClimateData2023.csv",
+      "category": "Environment",
+      "size": "2.4MB",
+      "downloads": 142,
+      "starred": true,
+      "lastUpdated": "2025-05-14"
+    },
+    {
+      "id": 1715670000002,
+      "name": "Financial Transactions Q4",
+      "filename": "1715670000002-FinancialTransactionsQ4.xlsx",
+      "category": "Finance",
+      "size": "1.1MB",
+      "downloads": 89,
+      "starred": false,
+      "lastUpdated": "2025-05-10"
+    },
+    {
+      "id": 1715670000003,
+      "name": "Kenya Health Stats 2022",
+      "filename": "1715670000003-KenyaHealthStats2022.pdf",
+      "category": "Healthcare",
+      "size": "900KB",
+      "downloads": 55,
+      "starred": false,
+      "lastUpdated": "2025-05-12"
+    },
+    {
+      "id": 1715670000004,
+      "name": "Social Media Trends 2024",
+      "filename": "1715670000004-SocialMediaTrends2024.csv",
+      "category": "Social",
+      "size": "3.2MB",
+      "downloads": 201,
+      "starred": true,
+      "lastUpdated": "2025-05-13"
+    }
+  ]
+  

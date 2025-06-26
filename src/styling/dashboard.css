@@ -1,0 +1,518 @@
+/* General Layout */
+body {
+  font-family: 'Inter', sans-serif; /* Kaggle often uses a sans-serif font like Inter */
+  background-color: #f7f9fa; /* Lighter background for the entire page */
+  color: #333;
+}
+
+.dashboard-main-wrapper {
+  display: flex;
+  flex-direction: column; /* Stacks header, then content area */
+  min-height: 100vh;
+  padding-top: 70px; /* Space for fixed TopNavigationBar */
+}
+
+.dashboard-header-main {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-bottom: 1px solid #e0e6ed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.dashboard-header-main h1 {
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #202124;
+  margin: 0;
+}
+
+.search-bar-full {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  background-color: #f0f3f6;
+  border-radius: 8px;
+  padding: 10px 15px;
+  border: 1px solid #dcdcdc;
+  transition: all 0.3s ease;
+}
+
+.search-bar-full:focus-within {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  background-color: #fff;
+}
+
+.search-bar-full svg {
+  margin-right: 10px;
+  color: #666;
+  font-size: 1.2em;
+}
+
+.search-bar-full input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.btn-upload-header {
+  background-color: #28a745; /* Green upload button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-upload-header:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+
+.dashboard-content-area {
+  display: flex;
+  flex: 1; /* Allows content area to take remaining height */
+  padding: 20px;
+  gap: 20px; /* Space between sidebar and main content */
+  max-width: 1400px; /* Limit overall content width */
+  margin: 0 auto; /* Center the content area */
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+  flex: 0 0 280px; /* Fixed width sidebar */
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  height: fit-content; /* Adjust height to content */
+  position: sticky; /* Sticky sidebar */
+  top: calc(70px + 20px); /* Adjust based on topnav height + desired spacing */
+}
+
+.dashboard-sidebar h2 {
+  font-size: 1.5em;
+  color: #202124;
+  margin-top: 0;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.dashboard-sidebar .filter-group {
+  margin-bottom: 25px;
+}
+
+.dashboard-sidebar .filter-group h3 {
+  font-size: 1.1em;
+  color: #444;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dashboard-sidebar .filter-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  font-size: 0.95em;
+  color: #333;
+  -webkit-appearance: none; /* Remove default arrow */
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2069.9L146.2%20208.5%205.4%2069.9c-1.8-1.8-4.7-1.8-6.5%200l-1.9%201.9c-1.8%201.8-1.8%204.7%200%206.5l141.5%20141.5c.9.9%202.1%201.3%203.2%201.3s2.3-.4%203.2-1.3l141.5-141.5c1.8-1.8%201.8-4.7%200-6.5l-1.9-1.9c-1.8-1.8-4.7-1.8-6.5%200z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 1em;
+  cursor: pointer;
+}
+
+/* Main Content Area */
+.dashboard-main-content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Space between sections */
+}
+
+.section-title {
+  font-size: 2em;
+  font-weight: 600;
+  color: #202124;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #e0e6ed;
+  padding-bottom: 10px;
+}
+
+/* Common Card Styles for both User Uploads summary and Global Datasets */
+.summary-cards, .dataset-cards-grid {
+  display: grid;
+  gap: 20px;
+  padding-bottom: 20px; /* Space before next section */
+}
+
+/* Summary Cards (User Uploads Overview) */
+.summary-cards {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+}
+
+.summary-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+}
+
+.summary-card svg {
+  font-size: 2.5em; /* Smaller than header, larger than text */
+  margin-bottom: 10px;
+  color: #007bff; /* Default icon color */
+}
+
+.summary-card h3 {
+  margin: 0 0 8px 0;
+  color: #555;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.summary-card p {
+  font-size: 2em; /* Count number */
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Specific colors for summary card icons and text */
+.summary-card.total-uploads svg { color: #6c757d; }
+.summary-card.pending-uploads svg { color: #ffc107; }
+.summary-card.approved-uploads svg { color: #28a745; }
+.summary-card.rejected-uploads svg { color: #dc3545; }
+
+
+/* My Datasets Detail List (Table) */
+.my-datasets-detail-list {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow-x: auto;
+}
+.my-datasets-detail-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+.my-datasets-detail-list th,
+.my-datasets-detail-list td {
+  border: 1px solid #e9ecef;
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.my-datasets-detail-list th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.my-datasets-detail-list td {
+  color: #343a40;
+  font-size: 0.95em;
+}
+.my-datasets-detail-list tr:nth-child(even) { background-color: #fefefe; }
+.my-datasets-detail-list tr:hover { background-color: #eaf1f7; }
+.my-datasets-detail-list td a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.my-datasets-detail-list td a:hover { text-decoration: underline; }
+
+.file-item-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+.file-item-name svg {
+  font-size: 1.2em;
+  color: #666; /* Default icon color for files */
+}
+
+
+/* Global Datasets Browse Section (Kaggle-like cards) */
+.dataset-cards-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Larger cards for global view */
+  justify-content: flex-start; /* Align cards to start */
+}
+
+.dataset-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.dataset-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.card-header-icon {
+  font-size: 2.5em; /* Large icon at the top */
+  color: #007bff;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.card-header-icon svg {
+  color: inherit; /* Inherit color from parent div */
+}
+
+
+.card-title {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.card-title a {
+  color: #202124;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.card-title a:hover {
+  color: #007bff;
+}
+
+.card-meta-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-meta-item .meta-icon {
+  font-size: 1.1em;
+  color: #888;
+}
+
+.card-actions {
+  margin-top: auto; /* Pushes buttons to the bottom */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.btn-card-download {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-card-download:hover {
+  background-color: #0056b3;
+}
+
+.btn-card-star {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.btn-card-star .starred {
+  color: #ffc107; /* Gold for starred */
+}
+
+/* Quick Actions Section */
+.quick-actions-section {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.action-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-action {
+  background-color: #f0f3f6;
+  color: #333;
+  padding: 15px 20px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-action:hover {
+  background-color: #e2e6ea;
+  border-color: #b0b4b8;
+  color: #007bff;
+}
+
+.btn-action svg {
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 0.8em;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.status-pending-review { background-color: #ffc107; color: #343a40; }
+.status-approved { background-color: #28a745; }
+.status-rejected { background-color: #dc3545; }
+.status-unknown-status { background-color: #6c757d; }
+
+
+/* File Icon Colors (for getFileIcon helper) */
+.file-icon-color-pdf { color: #dc3545; } /* Red */
+.file-icon-color-doc { color: #007bff; } /* Blue */
+.file-icon-color-xls { color: #28a745; } /* Green */
+.file-icon-color-txt { color: #6c757d; } /* Grey */
+.file-icon-color-img { color: #6f42c1; } /* Purple */
+.file-icon-color-default { color: #fd7e14; } /* Orange */
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .dashboard-content-area {
+      flex-direction: column; /* Stack sidebar and main content */
+      padding: 15px;
+  }
+  .dashboard-sidebar {
+      position: static; /* No longer sticky on smaller screens */
+      width: 100%; /* Take full width */
+      margin-bottom: 20px;
+  }
+  .dashboard-header-main {
+      padding: 20px;
+  }
+  .dashboard-header-main h1 {
+      font-size: 2em;
+  }
+  .search-bar-full input {
+      font-size: 1em;
+  }
+  .summary-cards, .dataset-cards-grid, .action-buttons-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .summary-card, .dataset-card, .btn-action {
+      padding: 15px;
+  }
+  .summary-card p {
+      font-size: 1.8em;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-header-main {
+      gap: 15px;
+  }
+  .dashboard-header-main h1 {
+      font-size: 1.8em;
+  }
+  .btn-upload-header {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+  }
+  .search-bar-full {
+      padding: 8px 12px;
+  }
+  .search-bar-full input {
+      font-size: 0.9em;
+  }
+  .summary-cards, .dataset-cards-grid, .action-buttons-grid {
+      grid-template-columns: 1fr; /* Single column on very small screens */
+  }
+  .dashboard-sidebar {
+      padding: 15px;
+  }
+  .my-datasets-detail-list {
+      padding: 15px;
+  }
+  .my-datasets-detail-list th, .my-datasets-detail-list td {
+      padding: 8px 10px;
+      font-size: 0.85em;
+  }
+  .section-title {
+      font-size: 1.5em;
+  }
+}

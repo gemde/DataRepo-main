@@ -1,0 +1,164 @@
+/* src/styling/datasetDetail.css */
+
+.dataset-detail-page {
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background for the page */
+    min-height: calc(100vh - 70px); /* Adjust based on topnav height */
+}
+
+.dataset-detail-page h2 {
+    color: #343a40;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.dataset-detail-card {
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12); /* Slightly stronger shadow for main card */
+    background-color: #ffffff;
+    padding: 30px;
+}
+
+.file-icon-large {
+    font-size: 3.5rem; /* Larger icon for detail page */
+    color: #007bff; /* Primary color */
+    vertical-align: middle;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #343a40;
+}
+
+.card-subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+hr {
+    margin: 25px 0;
+    border-top: 1px solid #e9ecef;
+}
+
+.detail-icon {
+    font-size: 1.25rem;
+    margin-right: 10px;
+    color: #6c757d; /* Muted color for icons */
+    vertical-align: middle;
+}
+
+.dataset-detail-page p {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: #343a40;
+}
+
+.detail-description {
+    background-color: #e9f5ff; /* Light blue background */
+    border-left: 5px solid #007bff; /* Primary blue border */
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-style: italic;
+    color: #343a40;
+    line-height: 1.6;
+    white-space: pre-wrap; /* Preserves whitespace and line breaks */
+    word-break: break-word; /* Breaks long words */
+}
+
+.detail-tags .badge {
+    font-size: 0.95em;
+    padding: 0.6em 0.9em;
+    border-radius: 15px; /* Pill-shaped badges */
+    background-color: #6c757d; /* Bootstrap secondary gray */
+    color: white;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    display: inline-block; /* For proper spacing */
+}
+
+/* Status Badges (re-used from adminDashboard.css or other common styles) */
+.status-badge {
+    padding: .35em .65em;
+    font-size: .75em;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    display: inline-block;
+    margin-left: 5px;
+    color: white;
+}
+
+.status-approved {
+    background-color: #28a745; /* green */
+}
+
+.status-pending-review {
+    background-color: #ffc107; /* yellow */
+    color: #212529;
+}
+
+.status-rejected {
+    background-color: #dc3545; /* red */
+}
+
+/* Action Buttons at the bottom */
+.dataset-detail-page .btn {
+    font-size: 1.05rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.dataset-detail-page .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.dataset-detail-page .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.dataset-detail-page .btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+}
+.dataset-detail-page .btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+
+.dataset-detail-page .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+.dataset-detail-page .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+/* For small screens */
+@media (max-width: 768px) {
+    .dataset-detail-card {
+        padding: 20px;
+    }
+    .file-icon-large {
+        font-size: 3rem;
+    }
+    .card-title {
+        font-size: 1.5rem;
+    }
+    .dataset-detail-page .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .dataset-detail-page .d-flex.justify-content-center {
+        flex-direction: column;
+        align-items: center;
+    }
+}

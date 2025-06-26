@@ -1,0 +1,358 @@
+/* Note: It's highly recommended to keep these styles in your global index.css */
+/* to avoid redundancy and potential conflicts with existing global styles. */
+/* This file is provided for demonstration if you explicitly want a separate file. */
+
+:root {
+    /* Define some common variables if not already in index.css */
+    /* These are examples and should ideally align with your global index.css */
+    --background-color-body: #1a1a1a;
+    --background-color-card: #2e2e2e; /* Original dark card color */
+    --color-text: rgba(255, 255, 255, 0.87);
+    --color-heading: rgba(255, 255, 255, 0.95);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --accent-color: #646cff; /* Primary accent */
+    --accent-color-hover: #535bf2; /* Darker accent for hover */
+    --success-color: #4CAF50;
+    --error-color: #F44336;
+
+    /* Light mode variables */
+    --background-color-body-light: #ffffff;
+    --background-color-card-light: #ffffff; /* Explicitly white for profile card */
+    --color-text-light: #213547; /* Darker text for light mode */
+    --color-heading-light: #1a1a1a; /* Darker headings for light mode */
+    --border-color-light: rgba(0, 0, 0, 0.1);
+    --light-text-secondary: #666; /* For hints/placeholders/muted text */
+    --light-border-subtle: #eee; /* For subtle dividers */
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color-body: var(--background-color-body-light);
+        --background-color-card: var(--background-color-card-light);
+        --color-text: var(--color-text-light);
+        --color-heading: var(--color-heading-light);
+        --border-color: var(--border-color-light);
+    }
+}
+
+
+.profile-container {
+    /* Max-width adjusted for a more compact look like the example image */
+    max-width: 680px; /* Reduced to make it more centered and compact */
+    margin: 40px auto; /* Slightly more vertical margin */
+    padding: 40px; /* More padding inside the card */
+    background-color: var(--background-color-card);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Lighter shadow for light theme feel */
+    text-align: left;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ensure card background is white in light mode explicitly */
+@media (prefers-color-scheme: light) {
+    .profile-container {
+        background-color: var(--background-color-card-light); /* Should be white */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Lighter shadow for light mode */
+    }
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px; /* More space below header */
+}
+
+.profile-header h1 {
+    font-size: 2.2em; /* Adjusted for smaller container */
+    color: var(--color-heading);
+    margin-bottom: 5px; /* Less space between name and handle */
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+}
+
+.profile-header p {
+    font-size: 1em; /* Smaller for the handle */
+    color: var(--light-text-secondary); /* Muted color for the handle */
+    opacity: 1; /* No opacity needed if color is set correctly */
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+
+/* Profile Picture Styling */
+.profile-picture-container {
+    position: relative;
+    width: 130px; /* Adjusted to be slightly smaller and more inline with example */
+    height: 130px;
+    margin: 0 auto 25px auto; /* More space below */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent-color); /* Slightly thinner accent border */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.profile-picture-container:hover {
+    border-color: var(--accent-color-hover);
+    box-shadow: 0 0 12px rgba(100, 108, 255, 0.4); /* Subtle hover shadow */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-picture-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly lighter overlay */
+    /* Other properties remain the same */
+}
+
+.profile-picture-overlay span {
+    font-size: 0.9em; /* Smaller text on overlay */
+    /* Other properties remain the same */
+}
+
+/* --- DEPRECATE THIS SECTION FOR NEW STRUCTURE --- */
+/* You will replace the HTML that relies on .profile-info */
+.profile-info {
+    /* text-align: center; This might not be needed with the new grid layout */
+    margin-bottom: 30px; /* Retain for spacing if still used in other parts */
+}
+
+.profile-info p {
+    /* These styles will be replaced by .profile-info-label and .profile-info-value */
+    font-size: 1.15em;
+    color: var(--color-text);
+    margin-bottom: 8px;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.profile-info p strong {
+    color: var(--color-heading);
+    font-weight: 600;
+}
+/* --- END OF DEPRECATED SECTION --- */
+
+
+/* --- NEW: Profile Information Grid Layout --- */
+.profile-info-grid {
+    display: flex; /* Use flexbox to stack items */
+    flex-direction: column;
+    gap: 10px; /* Space between each info item */
+    padding: 0 20px; /* Inner padding to align with example image */
+}
+
+.profile-info-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0; /* Vertical padding for each row */
+    border-bottom: 1px solid var(--light-border-subtle); /* Subtle separator line */
+}
+
+.profile-info-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.profile-info-label {
+    flex-basis: 150px; /* Fixed width for labels to align values */
+    font-weight: 600;
+    color: var(--color-heading); /* Darker color for labels */
+    font-size: 1em;
+    text-align: left;
+}
+
+.profile-info-value {
+    flex-grow: 1; /* Allows value to take remaining space */
+    color: var(--color-text); /* Standard text color */
+    font-size: 1em;
+    text-align: right; /* Aligns value to the right */
+    padding-right: 15px; /* Space before the edit icon */
+}
+
+.edit-icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto; /* Pushes button to the far right */
+    color: var(--light-text-secondary); /* Muted color for icon */
+    font-size: 1.2em; /* Size of the icon itself (if using font icon) */
+    display: flex; /* To center SVG if it's there */
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.edit-icon-button:hover {
+    color: var(--accent-color); /* Highlight on hover */
+    transform: scale(1.1);
+}
+
+.edit-icon-button svg {
+    width: 18px; /* Standard size for SVG icon */
+    height: 18px;
+    fill: currentColor; /* Inherit color from parent */
+}
+/* --- END NEW --- */
+
+
+/* Profile Sections (General Info, Change Password) */
+.profile-sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+    .profile-sections {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.profile-section-card {
+    background-color: var(--background-color-card);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (prefers-color-scheme: light) {
+    .profile-section-card {
+        background-color: var(--background-color-card-light); /* Should be white */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Even lighter shadow */
+    }
+}
+
+.profile-section-card h2 {
+    font-size: 1.6em; /* Slightly adjusted heading size */
+    color: var(--color-heading);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px; /* Less padding below line */
+    margin-bottom: 25px;
+    text-align: center;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Form Elements Styling (Mostly retained, ensure colors align with light mode) */
+.form-group label {
+    font-size: 0.9em; /* Slightly smaller labels for forms */
+    color: var(--color-text); /* Ensure good contrast in light mode */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select {
+    width: calc(100% - 20px);
+    padding: 10px 10px; /* Slightly less padding to match other forms */
+    border: 1px solid var(--border-color);
+    background-color: rgba(255, 255, 255, 0.95); /* Nearly white background for light mode */
+    color: var(--color-text); /* Dark text on light background */
+    font-size: 0.95em;
+}
+
+@media (prefers-color-scheme: light) {
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group select {
+        background-color: #ffffff; /* White background in light mode */
+        border-color: var(--border-color);
+        color: var(--color-text);
+    }
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2); /* Lighter glow */
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder,
+.form-group input[type="password"]::placeholder {
+    color: var(--light-text-secondary); /* Muted placeholder color */
+}
+
+/* Buttons (Retained largely as is) */
+.profile-button {
+    padding: 10px 18px; /* Slightly reduced padding */
+    font-size: 1em; /* Adjusted font size */
+    margin-top: 15px; /* Slightly less margin */
+}
+
+
+/* Messages (Retained largely as is) */
+.profile-message {
+    padding: 8px 12px;
+    font-size: 0.85em; /* Slightly smaller messages */
+}
+
+
+/* Responsive Adjustments (Slightly modified to match new sizes) */
+@media (max-width: 767px) {
+    .profile-container {
+        padding: 25px; /* Slightly more padding for smaller screens */
+        margin: 25px auto;
+        max-width: 90%; /* Allow it to shrink more on very small screens */
+    }
+
+    .profile-header h1 {
+        font-size: 1.8em;
+    }
+
+    .profile-picture-container {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
+    .profile-info-grid {
+        padding: 0 10px; /* Reduce inner padding */
+    }
+
+    .profile-info-label {
+        flex-basis: 100px; /* Adjust label width for small screens */
+        font-size: 0.9em;
+    }
+
+    .profile-info-value {
+        font-size: 0.9em;
+    }
+
+    .profile-section-card {
+        padding: 25px;
+    }
+
+    .profile-section-card h2 {
+        font-size: 1.4em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .profile-button {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .profile-section-card {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .profile-info-grid {
+        padding: 0;
+    }
+}

@@ -1,0 +1,72 @@
+/* src/styling/Leaderboard.css */
+
+.leaderboard-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leaderboard-container h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.leaderboard-table th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.leaderboard-table tbody tr:nth-child(even) {
+    background-color: #f8fcfd;
+}
+
+.leaderboard-table tbody tr:hover {
+    background-color: #eaf6fd;
+    transition: background-color 0.3s ease;
+}
+
+.leaderboard-table td {
+    color: #34495e;
+    font-size: 0.95em;
+}
+
+.leaderboard-table tr:last-child td {
+    border-bottom: none;
+}
+
+.leaderboard-container .error-message,
+.leaderboard-container p {
+    text-align: center;
+    color: #555;
+    font-size: 1.1em;
+    padding: 20px 0;
+}
+
+.leaderboard-container .error-message {
+    color: #e74c3c;
+    font-weight: bold;
+}

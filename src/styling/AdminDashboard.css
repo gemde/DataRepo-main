@@ -1,0 +1,188 @@
+/* src/styling/adminDashboard.css */
+
+.admin-dashboard-page {
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background for the page */
+    min-height: calc(100vh - 70px); /* Adjust based on topnav height */
+}
+
+.admin-dashboard-page h1 {
+    color: #343a40;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* Tabs Styling */
+.admin-dashboard-page .nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+    margin-bottom: 20px;
+}
+
+.admin-dashboard-page .nav-tabs .nav-item {
+    margin-bottom: -2px; /* Pulls tab up to meet the border */
+}
+
+.admin-dashboard-page .nav-tabs .nav-link {
+    color: #007bff; /* Primary blue for inactive tabs */
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.admin-dashboard-page .nav-tabs .nav-link:hover {
+    border-color: #e9ecef #e9ecef #dee2e6;
+    background-color: #e9ecef;
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.admin-dashboard-page .nav-tabs .nav-link.active {
+    color: #495057; /* Darker text for active tab */
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff; /* Active tab border */
+    font-weight: 600;
+}
+
+/* Table Styling */
+.admin-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: separate; /* Allows for rounded corners on cells if desired */
+    border-spacing: 0;
+    border-radius: 8px; /* Rounded corners for the whole table */
+    overflow: hidden; /* Ensures content stays within rounded borders */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+}
+
+.admin-table thead th {
+    background-color: #f2f2f2;
+    color: #343a40;
+    padding: 12px 15px;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+    text-align: left;
+}
+
+.admin-table tbody td {
+    padding: 10px 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #dee2e6;
+    background-color: #fff;
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: none; /* No border for the last row's cells */
+}
+
+.admin-table tbody tr:hover {
+    background-color: #f0f0f0; /* Light hover effect */
+}
+
+/* Status Badges */
+.status-badge {
+    padding: .35em .65em;
+    font-size: .75em;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    display: inline-block;
+    margin-left: 5px;
+    color: white; /* Default text color for badges */
+}
+
+.status-approved {
+    background-color: #28a745; /* Bootstrap success green */
+}
+
+.status-pending-review {
+    background-color: #ffc107; /* Bootstrap warning yellow */
+    color: #212529; /* Dark text for contrast on yellow */
+}
+
+.status-rejected {
+    background-color: #dc3545; /* Bootstrap danger red */
+}
+
+/* Action Buttons within tables */
+.admin-table .btn-sm {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+
+.admin-table .btn-success { background-color: #28a745; border-color: #28a745; }
+.admin-table .btn-danger { background-color: #dc3545; border-color: #dc3545; }
+.admin-table .btn-info { background-color: #17a2b8; border-color: #17a2b8; }
+.admin-table .btn-warning { background-color: #ffc107; border-color: #ffc107; color: #212529;}
+
+/* User Management Form Styling */
+.admin-dashboard-page .form-control,
+.admin-dashboard-page .form-select {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 0.375rem 0.75rem;
+}
+
+.admin-dashboard-page .form-control:focus,
+.admin-dashboard-page .form-select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+/* Alert Styling */
+.admin-dashboard-page .alert {
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .table-responsive {
+        border: 1px solid #dee2e6; /* Add border for small screens */
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+    .admin-table thead {
+        display: none; /* Hide header on small screens */
+    }
+    .admin-table, .admin-table tbody, .admin-table tr, .admin-table td {
+        display: block; /* Make table elements behave as blocks */
+        width: 100%;
+    }
+    .admin-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        padding: 10px;
+        background-color: #fff;
+    }
+    .admin-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+    }
+    .admin-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 600;
+        color: #495057;
+    }
+    .admin-table td:first-child { border-top-left-radius: 8px; border-top-right-radius: 8px; }
+    .admin-table td:last-child { border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; }
+}
+

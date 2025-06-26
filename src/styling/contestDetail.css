@@ -1,0 +1,231 @@
+/* src/styling/contestDetail.css */
+
+.contest-detail-container {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contest-detail-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contest-header-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.contest-header-section h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    margin: 0;
+    flex-grow: 1;
+    padding-right: 15px; /* Spacing from status badge */
+}
+
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.status-badge.active { background-color: #28a745; } /* Green */
+.status-badge.completed { background-color: #6c757d; } /* Gray */
+.status-badge.upcoming { background-color: #007bff; } /* Blue */
+.status-badge.unknown { background-color: #ffc107; } /* Yellow */
+
+
+.contest-creator {
+    font-size: 1em;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.contest-meta-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Spacing between meta items */
+    margin-bottom: 30px;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.contest-meta-details span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contest-meta-details svg {
+    color: #3498db; /* Icon color */
+    font-size: 1.1em;
+}
+
+.difficulty-badge {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.difficulty-badge.beginner { background-color: #28a745; }
+.difficulty-badge.intermediate { background-color: #ffc107; color: #333; }
+.difficulty-badge.advanced { background-color: #dc3545; }
+
+
+.contest-full-description {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #34495e;
+    margin-bottom: 30px;
+    white-space: pre-wrap; /* Preserve line breaks from backend */
+}
+
+.detail-section {
+    margin-bottom: 25px;
+}
+
+.detail-section h3 {
+    font-size: 1.5em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+.detail-section ul {
+    list-style: disc;
+    margin-left: 25px;
+    padding: 0;
+    color: #555;
+}
+
+.detail-section ul li {
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background-color: #e0f2f7;
+    color: #2196f3;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.contest-actions-detail {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contest-actions-detail .btn-primary,
+.contest-actions-detail .btn-secondary {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* For NavLink */
+    display: inline-block; /* For NavLink */
+    margin: 0 10px;
+}
+
+.contest-actions-detail .btn-primary {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.contest-actions-detail .btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.contest-actions-detail .btn-secondary {
+    background-color: #ecf0f1;
+    color: #34495e;
+    border: 1px solid #bdc3c7;
+}
+
+.contest-actions-detail .btn-secondary:hover {
+    background-color: #bdc3c7;
+}
+
+.loading-message, .error-message, .no-contest-found {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2em;
+    color: #7f8c8d;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contest-detail-container {
+        padding: 20px 15px;
+        margin: 15px auto;
+    }
+
+    .contest-header-section h1 {
+        font-size: 1.8em;
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .contest-header-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contest-meta-details {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contest-actions-detail .btn-primary,
+    .contest-actions-detail .btn-secondary {
+        display: block;
+        width: calc(100% - 20px); /* Adjust for padding/margin */
+        margin: 10px auto;
+    }
+}
+/* src/styling/contestDetail.css (add these) */
+.status-active {
+    color: #27ae60;
+    font-weight: bold;
+}
+.status-completed {
+    color: #e74c3c;
+    font-weight: bold;
+}
+.status-upcoming {
+    color: #f39c12;
+    font-weight: bold;
+}
+/* etc. */

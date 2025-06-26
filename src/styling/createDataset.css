@@ -1,0 +1,207 @@
+/* src/styling/createDataset.css */
+
+.create-dataset-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top, not center vertically */
+    padding: 80px 20px 40px; /* Top padding for navbar, then side/bottom padding */
+    min-height: 100vh;
+    background-color: #f7f9fa; /* Light background */
+}
+
+.create-dataset-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 700px; /* Max width for the form card */
+    margin-bottom: 30px; /* Space at the bottom */
+}
+
+.card-title-header {
+    font-size: 2.2em;
+    color: #202124;
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.card-title-header svg {
+    font-size: 1.2em;
+    color: #007bff;
+}
+
+.dataset-form .form-group {
+    margin-bottom: 25px;
+}
+
+.dataset-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #333;
+    font-size: 1.05em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dataset-form label svg {
+    font-size: 1.1em;
+    color: #007bff;
+}
+
+.dataset-form .required {
+    color: #dc3545; /* Red asterisk */
+    margin-left: 5px;
+}
+
+.dataset-form input[type="text"],
+.dataset-form input[type="file"],
+.dataset-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.dataset-form input[type="text"]:focus,
+.dataset-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    background-color: #fff;
+    outline: none;
+}
+
+.dataset-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px;
+    line-height: 1.5;
+}
+
+/* File Input Specific Styling */
+.file-input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-input-label {
+    cursor: pointer;
+    background-color: #e9ecef;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px dashed #ced4da;
+    color: #495057;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.file-input-label:hover {
+    background-color: #dee2e6;
+    border-color: #adb5bd;
+}
+
+.file-input-group input[type="file"] {
+    display: none; /* Hide default file input */
+}
+
+.selected-file-name {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+    font-style: italic;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-button:hover:not(:disabled) {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+    background-color: #a0c8f5;
+    cursor: not-allowed;
+}
+
+/* Alerts */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    text-align: center;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .create-dataset-card {
+        padding: 30px;
+        margin: 20px;
+    }
+    .card-title-header {
+        font-size: 1.8em;
+    }
+    .dataset-form label {
+        font-size: 0.95em;
+    }
+    .dataset-form input[type="text"],
+    .dataset-form textarea,
+    .file-input-label,
+    .submit-button {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .create-dataset-card {
+        padding: 20px;
+        margin: 10px;
+    }
+    .card-title-header {
+        font-size: 1.5em;
+    }
+    .dataset-form .form-group {
+        margin-bottom: 18px;
+    }
+}
